@@ -1,0 +1,38 @@
+import React from "react";
+import GridShape from "../../components/common/GridShape";
+import { Link } from "react-router";
+import ThemeTogglerTwo from "../../components/common/ThemeTogglerTwo";
+
+export default function AuthLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="relative p-6 bg-white z-1 dark:bg-gray-900 sm:p-0">
+      <div className="relative flex flex-col justify-center w-full h-screen lg:flex-row dark:bg-gray-900 sm:p-0">
+        {children}
+        <div className="relative items-center hidden w-full h-full lg:w-1/2 bg-brand-950 dark:bg-white/5 lg:grid overflow-hidden">
+        <div className="relative flex items-center justify-center w-full h-full z-1">
+            <GridShape />
+
+            <div className="relative z-10 flex flex-col items-center max-w-xs">
+            <a href="/" className="mb-4 block">
+                <h1 className="text-center text-white text-3xl font-bold">
+                SIMPRESMA
+                </h1>
+            </a>
+
+            <p className="text-center text-gray-400 dark:text-white/60">
+                Manajemen Prestasi Mahasiswa Fasilkom Universitas Jember
+            </p>
+            </div>
+        </div>
+        </div>
+        <div className="fixed z-50 hidden bottom-6 right-6 sm:block">
+          <ThemeTogglerTwo />
+        </div>
+      </div>
+    </div>
+  );
+}
